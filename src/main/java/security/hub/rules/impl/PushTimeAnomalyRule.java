@@ -13,7 +13,7 @@ public class PushTimeAnomalyRule implements AnomalyRule {
     private final ZoneId ZONE = ZoneId.of("Asia/Jerusalem");
 
     @Override
-    public Optional<AnomalyAlert> detect(GitHubEvent event) {
+    public Optional<AnomalyAlert> detectAnomaly(GitHubEvent event) {
         Optional<AnomalyAlert> anomalyAlert = Optional.empty();
 
         if (event.repository() == null || !"push".equalsIgnoreCase(event.eventType())) {

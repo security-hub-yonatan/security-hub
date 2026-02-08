@@ -6,5 +6,5 @@ import security.hub.model.GitHubEvent;
 import java.util.Optional;
 
 public interface AnomalyRule {
-    Optional<AnomalyAlert> detect(GitHubEvent event);
+    Optional<AnomalyAlert> detectAnomaly(GitHubEvent event);
 }

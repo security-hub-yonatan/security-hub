@@ -17,7 +17,7 @@ public class RapidRepoDeletionRule implements AnomalyRule {
     private final Map<String, Instant> creationTimes = new ConcurrentHashMap<>();
 
     @Override
-    public Optional<AnomalyAlert> detect(GitHubEvent event) {
+    public Optional<AnomalyAlert> detectAnomaly(GitHubEvent event) {
         Optional<AnomalyAlert> anomalyAlert = Optional.empty();
 
         if (event.repository() == null) {

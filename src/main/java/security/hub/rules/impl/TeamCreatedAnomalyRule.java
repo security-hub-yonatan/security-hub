@@ -13,7 +13,7 @@ public class TeamCreatedAnomalyRule implements AnomalyRule {
     private static final List<String> FORBIDDEN_PREFIXES = List.of("hacker");
 
     @Override
-    public Optional<AnomalyAlert> detect(GitHubEvent event) {
+    public Optional<AnomalyAlert> detectAnomaly(GitHubEvent event) {
         Optional<AnomalyAlert> anomalyAlert = Optional.empty();
 
         if (!"created".equalsIgnoreCase(event.action()) || event.team() == null || !"team".equalsIgnoreCase(event.eventType())) {

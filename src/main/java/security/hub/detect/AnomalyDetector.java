@@ -20,10 +20,8 @@ public class AnomalyDetector {
 
     public void detectAnomaly(GitHubEvent event) {
         rules.parallelStream()
-                .map(rule -> rule.detect(event))
+                .map(rule -> rule.detectAnomaly(event))
                 .flatMap(Optional::stream)
-                .forEach(alert ->
-                        notifiers.forEach(notifier -> notifier.notify(alert))
-                );
+                .forEach(alert -> notifiers.forEach(notifier -> notifier.notify(alert)));
     }
 }
